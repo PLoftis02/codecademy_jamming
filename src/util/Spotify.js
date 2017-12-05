@@ -7,7 +7,6 @@ let redirectUri ="http://bored-game.surge.sh/";
 
 
 let Spotify = {
-
   savePlaylist(playlistName, playlistTracks){
       if(!playlistName || !playlistTracks){
         return false;
