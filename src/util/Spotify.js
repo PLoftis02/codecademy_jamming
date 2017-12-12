@@ -3,6 +3,7 @@ let expires_in = '';
 
 let clientID = 'f14b789e47ad4fc2a11966824d8df821';
 let redirectUri ="http://bored-game.surge.sh/";
+//let redirectUri ="http://localhost:3000/";
 
 
 
@@ -80,7 +81,8 @@ let Spotify = {
             name: track.name,
             artist: track.artists[0].name,
             album: track.album.name,
-            uri: track.uri
+            uri: track.uri,
+            preview: track.preview_url
           }
         });
     });

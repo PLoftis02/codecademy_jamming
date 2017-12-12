@@ -16,6 +16,14 @@ class Track extends Component{
     this.props.onRemove(this.props.track);
   }
 
+  previewAction(){
+    if(this.props.track.preview){
+      return <audio controls> <source src={this.props.track.preview} type="audio/mpeg" /></audio>
+    }else{
+      return <a className="Preview-action"> No Preview Avail. </a>;
+    }
+  }
+
   renderAction(){
     if(this.props.track.isRemoval){
       return <a className="Track-action" onClick={this.removeTrack}>-</a>;
@@ -24,6 +32,8 @@ class Track extends Component{
     }
   }
 
+
+
   render(){
     return(
       <div className="Track">
@@ -31,7 +41,10 @@ class Track extends Component{
         <h3>{this.props.track.name}</h3>
         <p>{this.props.track.artist} | {this.props.track.album}</p>
       </div>
+        <p>
+        {this.previewAction()}
         {this.renderAction()}
+        </p>
     </div>
     );
   }
